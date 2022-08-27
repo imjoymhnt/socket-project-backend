@@ -31,6 +31,7 @@ io.on("connection", (socket) => {
 app.use(express.json());
 app.use(cors());
 
+app.get("/", (req, res) => res.send({ status: "Alive" }));
 app.use("/api", ButtonClickCountRoute);
 
 server.listen(5000, () => {
